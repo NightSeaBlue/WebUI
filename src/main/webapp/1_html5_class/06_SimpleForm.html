@@ -6,22 +6,22 @@
 </head>
 <body>
 
-<form>		<!--  method='post' submit한 데이터 안보임 -->
+<form id="signup">		<!--  method='post' submit한 데이터 안보임 -->
 	<fieldset>
 		<legend>회원가입</legend>
 		<ol>
 			<li>
 					<label for="name">이름</label>
-					<input type ="text" id="name"	name = "name">
+					<input type ="text" id="name"	name="name">
 			</li>
 			<li>
 					<label for="gender">성별</label>
-					<input type ="radio"	name = "gender" checked='checked'>남자
-					<input type ="radio"	name = "gender">여자
+					<input type ="radio"	name="gender" checked='checked'>남자
+					<input type ="radio"	name="gender">여자
 			</li>
 			<li>
 					<label for="job">직업</label>
-					<select	id="job"	name = "job">
+					<select	id="job"	name="job">
 						<option>개발자</option>
 						<option>프로그래머</option>
 						<option>코더</option>
@@ -38,8 +38,8 @@
 			
 			<li>
 					<label for="lover">연인</label>
-					<input type = "radio"	name="lover">있다
-					<input type = "radio"	name="lover">없다
+					<input type="radio"	name="lover">있다
+					<input type="radio"	name="lover">없다
 			</li>
 			
 			<li>					
@@ -50,7 +50,7 @@
 	</fieldset>
 </form>
 
-<form>
+<form id = "accept">
 <fieldset>
 	<legend>로그인 정보</legend>
 	<ol>
@@ -60,35 +60,33 @@
 		</li>
 		<li>
 				<label for="pw">비밀번호</label>
-				<input type="text" id="pw"	name="pw">
+				<input type="password" id="pw"	name="pw">
 		</li>
 		<li>
 				<label for="pwc">비밀번호확인</label>
-				<input type="text" id="pwc"	name="pwc">
+				<input type="password" id="pwc"	name="pwc">
 		</li>
 		<li>
 			<label for="member">회원 등급</label>
-			<input type="text" placeholder="준회원">
+			<input type="text" id="member" placeholder="준회원">
 		</li>
 	</ol>
 </fieldset>
-</form>
 
-<form>
 <fieldset>
 	<legend>개인 정보</legend>
 	<ol>
 		<li>
 				<label for="name">이름</label>
-				<input type="text" placeholder="5자미만 공백없이"	id="name"	name="name">
+				<input type="text" maxlength=4 placeholder="5자미만 공백없이"  id="name" name="name">
 		</li>
 		<li>
 				<label for="email">메일 주소</label>
-				<input type="email" placeholder="abcd@domain.com"	id="email"	name="email">
+				<input type="email" placeholder="abcd@domain.com" id="email" name="email">
 		</li>
 		<li>
 				<label for="tel">연락처</label>
-				<input type="tel" id="tel"	name="tel">
+				<input type="tel" id="tel" name="tel">
 		</li>
 		<li>
 			<label for="birth">생일</label>
@@ -96,9 +94,7 @@
 		</li>
 	</ol>
 </fieldset>
-</form>
 
-<form>
 <fieldset>
 	<legend>코딩 숙련도(상,중,하)</legend>
 	<ol>		

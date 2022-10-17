@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>06_SimpleForm.html</title>
+<link type='text/css'	rel='stylesheet'	href='/WebUI/2_css_class/css/myform.css'>
+</head>
+<body>
+
+<form id="signup">		<!--  method='post' submit한 데이터 안보임 -->
+	<fieldset>
+		<legend>회원가입</legend>
+		<ol>
+			<li>
+					<label for="name">이름</label>
+					<input type ="text" id="name"	name="name">
+			</li>
+			<li>
+					<label for="gender">성별</label>
+					<input type ="radio"	name="gender" checked='checked'>남자
+					<input type ="radio"	name="gender">여자
+			</li>
+			<li>
+					<label for="job">직업</label>
+					<select	id="job"	name="job">
+						<option>개발자</option>
+						<option>프로그래머</option>
+						<option>코더</option>
+						<option>야가다</option>
+					</select>
+			</li>
+			<li>
+					<label for="hobby">취미</label>
+					<input type="checkbox"	name="hobby">잠자기
+					<input type="checkbox"	name="hobby">영화보기
+					<input type="checkbox"	name="hobby">독서
+					<input type="checkbox"	name="hobby">음악감상
+			</li>
+			
+			<li>
+					<label for="lover">연인</label>
+					<input type="radio"	name="lover">있다
+					<input type="radio"	name="lover">없다
+			</li>
+			
+			<li>					
+					<input type="submit"	value="확인">
+					<input type="reset"		value="취소">					
+			</li>
+		</ol>
+	</fieldset>
+</form>
+</body>
+</html>

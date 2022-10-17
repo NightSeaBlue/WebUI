@@ -4,19 +4,18 @@
 <meta charset="UTF-8">
 <title>good.html</title>
 <style type="text/css">
-/* 		ID 찾기는 #으로 찾음 */
+/* ID 찾기는 #으로 찾음  */
 #txt {
 	color: blue;
 }
 </style>
 </head>
-
 <body>
-	<div id='txt'>웹표준을 따름</div>
+	<div id="txt">웹표준을 따름</div>
 </body>
-
+<!-- 강사님한테 물어보기/ 왜 작동이 안 되는지 -->
 <script type="text/javascript">
-	var txt = document.getElementByID("txt");
+	var txt = document.getElementById("txt");
 	txt.onclick = function() {
 		alert("확인2");
 	}

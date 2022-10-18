@@ -1,0 +1,7 @@
+
+															<js 군단>
+Presentation		HTML,CSS,JS								HTML,CSS,JS
+
+Application			JSP(asp/php) -- Java Server Page		node.js
+
+Database			Oracle(Mysql)							mongodb

@@ -2,9 +2,29 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title> 이벤트 핸들러 연결 </title>
-  </head>
- <body>
-	<input type='button' value='눌러'  id='btn' />
- </body>
+<title>이벤트 핸들러 연결</title>
+	<script type="text/javascript">
+	
+	window.onload= function() {		//창이 만들어 진후 함수가 실행될 수 있도록 하는 명령어
+		var btn=document.getElementById('btn');
+		btn.onclick = function(){
+			alert('버튼클릭3');
+		}
+	}
+	
+// 	var btn=document.getElementById('btn');	 //한줄 씩 읽어내려가며 실행함으로 화면이 구축된 후 실행되어야 함. 만일 onload가 없는 경우, 반드시 input 이후 실행될 수 있도록 구축
+// 	btn.onclick = btn_click;
+	
+// 	function btn_click(){
+// 		alert('버튼클릭');	
+// 	}
+
+// 	btn.onclick = function(){
+// 		alert('버튼클릭2');
+// 	}
+</script>
+</head>
+<body>
+	<input type='button' value='눌러' id='btn' />
+</body>
 </html>

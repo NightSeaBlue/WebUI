@@ -2,9 +2,19 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title> 이벤트 리스너 연결 </title>
- </head>
- <body>
-	<input type='button' value='눌러'  id='btn' />
- </body>
+<title>이벤트 리스너 연결</title>
+<script type="text/javascript">
+	window.onload = function(){		// 함수를 한 덩어리의 변수로 취급해 활용 가능 (따로 함수명 지정 하지 않아도 실행가능)
+		var b = document.getElementById('btn');
+		b.addEventListener('click',function(){
+				alert('확인');			
+		});
+		
+	}
+
+</script>
+</head>
+<body>
+	<input type='button' value='눌러' id='btn' />
+</body>
 </html>

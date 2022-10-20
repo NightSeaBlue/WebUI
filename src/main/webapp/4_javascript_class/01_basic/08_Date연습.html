@@ -2,7 +2,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title></title>
+<title>여행 일정 계산기</title>
 <script type="text/javascript">
 	window.onload = function(){
 		document.getElementById('btn').onclick = function(){
@@ -11,8 +11,14 @@
 			 
 			 var sDate = new Date(s);
 			 var eDate = new Date(e);
-
-	
+			 
+			 var diff = eDate - sDate;
+			 alert(diff);
+			 
+			 var diff2 = Math.ceil(diff/(1000*60*60*24));		// 컴퓨터 시간 표기는 기본 ms - 60 sec - 60 min - 24 day
+			 alert(diff2);
+			 
+			 
 		}
 	}
 </script>

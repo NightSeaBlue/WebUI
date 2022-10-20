@@ -12,7 +12,21 @@ m.set('script','2222');
 m.set('nodejs', '2222');
 m.set('java','3333');
 
+// Java : JVM 구동 / 번역 파일이 필요 *.class (컴파일러 필요)
+// Javascript : 인터프린터 언어 (한줄 씩 읽고 해석 / python 도 이에 해당)
+//for.. in : 인덱스 추출
+//for.. of : 요소 추출
+for (let k of m) {
+	document.writeln(k[0]+'/'+k[1]+'<br/>');		//배열 지정후 출력시 key/value 출력
+}
 
+for (let[k,v] of m) {
+	document.writeln(k+'/'+v+'<br/>');		// 해당 형태로 key value 배열 취급해 출력 가능
+}
+
+/*for (let k in m) {
+	document.writeln(k+'<br/>');		// Map 에서 인덱스 추출 불가능
+}*/
 
 
 
@@ -35,6 +49,25 @@ s.add('dog');
 s.add('lion');
 s.add('dog');
 
+/*for ( var k in s) {
+	document.writeln(k+'<br/>');			// Set 또한 Index 추출 불가능
+}*/
+
+for (let k of s) {
+	document.writeln(k+'<br/>');
+}
+
+// [로또]
+
+let lotto = new Set();
+while (lotto.size <6) {
+	//랜덤수를 추출하여 set에 추가
+	let su = parseInt(Math.random()*45)+1;
+	lotto.add(su);
+}
+for (let num of lotto) {
+	document.write(num+'/');
+}	
 
 </script>
 </head>

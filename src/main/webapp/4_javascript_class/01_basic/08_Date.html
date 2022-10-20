@@ -6,17 +6,37 @@
 <script type="text/javascript">	
  	
 	var d = new Date('2023/08/15');
-	document.writeln( d  + '<br/>');
-	document.writeln( d.getYear()  + '<br/>');
-	document.writeln( d.getFullYear()  + '<br/>');
-	document.writeln( d.getMonth()  + '<br/>');
-	document.writeln( d.getDate()  + '<br/>');
-	document.writeln( d.getDay()  + '<br/>');
-
-
+	document.writeln( d  + '<br/>');								//시 분 초 / 시각 (한국표준시)
+	document.writeln( d.getYear()  + '<br/>');						// 123?
+	document.writeln( d.getFullYear()  + '<br/>');					// 2023 (연도 뽑을 때 반드시 Full Year로)
+	document.writeln( d.getMonth()+1  + '<br/>');			// 7 (컴퓨터 언어로 취급, Jan 0부터 시작)
+	document.writeln( d.getDate()  + '<br/>');						// 15
+	document.writeln( d.getDay()  + '<br/>');						//	0 (일요일 0 부터 시작)
+	document.writeln('<hr/>');
+	var today = new Date();
+	document.writeln( today  + '<br/>');								//시 분 초 / 시각 (한국표준시)
+	document.writeln( today.toLocaleString()  + '<br/>');				// 연 월 일 시 분 초 / 현지 시각
+	document.writeln( today.toGMTString()  + '<br/>');					// 요일명, 일 월 연 그라니치표준(런던)
+	document.writeln( today.toDateString()  + '<br/>');					// 요일 월 일 연
+	document.writeln('<hr/>');
 	
+	//2025-05-12
+	var day = new Date();
+	day.setFullYear(2025);											// 연 지정
+	day.setMonth(5-1);												// 원하는 달을 세팅하고자 할 때 기준 달에서 -1
+	day.setDate(12);													// 일 지정
+	document.writeln(day+'<br/>');
+	document.writeln('<hr/>');
 	
-	
+	var today = new Date();
+	today.setMonth(today.getMonth()-3);
+	document.writeln(today+'<br/>');
+	// 현재 날짜에서 20일을 더하면
+	today.setDate(today.getDate()+20);
+	document.writeln('<hr/>');
+	//
+	today.setDate(0);
+	document.writeln(today.toDateString()+'<br/>');
 	
 	</script>
 

@@ -2,27 +2,97 @@
 <html lang="ko">
 <head>
 <meta charset="UTF-8">
-<title> 폼 예제 2</title>
+<title>폼 예제 2</title>
 </head>
 <script type="text/javascript">
+	window.onload = function() {
+		/*frm.up.onclick = function() {
+			//alert("올려");
+			let idx = frm.play.selectedIndex;
+			//alert(idx);
+			let optSel = frm.play.options;
+
+			if (idx > 0) {
+				let temp = optSel[idx].text;
+				optSel[idx].text = optSel[idx - 1].text;
+				optSel[idx - 1].text = temp;
+				optSel[idx - 1].selected = true;
+			}
+		}
+
+		frm.down.onclick = function() {
+			//alert("내려");
+			let idx = frm.play.selectedIndex;
+			let optSel = frm.play.options;
+			if (idx < 5) {
+				let temp = optSel[idx].text;
+				optSel[idx].text = optSel[idx + 1].text;
+				optSel[idx + 1].text = temp;
+				optSel[idx + 1].selected = true;
+			}
+
+		}*/
+
+		document.querySelector('#up').onclick = function() {
+			//alert("올려");
+			let idx = frm.play.selectedIndex;
+			let optSel = frm.play.options;
+			let length = frm.play.options.length;
+			if (idx > 0) {
+				let temp = optSel[idx].text;
+				optSel[idx].text = optSel[idx - 1].text;
+				optSel[idx - 1].text = temp;
+				optSel[idx - 1].selected = true;
+			} else if (idx == 0) {
+				let temp = optSel[idx].text;
+				for (let i = 0; i < length - 1; i++) {
+					optSel[i].text = optSel[i + 1].text;
+				}
+				optSel[length - 1].text = temp;
+				optSel[length - 1].selected = true;
+			}
+
+		}
+
+		document.querySelector('#down').onclick = function() {
+			//alert("내려");
+			let idx = frm.play.selectedIndex;
+			let optSel = frm.play.options;
+			let length = frm.play.options.length;
+			if (idx < 5) {
+				let temp = optSel[idx].text;
+				optSel[idx].text = optSel[idx + 1].text;
+				optSel[idx + 1].text = temp;
+				optSel[idx + 1].selected = true;
+			} else if (idx == 5) {
+				let temp = optSel[idx].text;
+				for (let i = length - 1; i > 0; i--) {
+					optSel[i].text = optSel[i - 1].text;
+				}
+				optSel[0].text = temp;
+				optSel[0].selected = true;
+			}
+		}
+	}
 </script>
 <body>
 
-내가 제일 좋아하는 놀이 순서대로 한다면 <br>
+	내가 제일 좋아하는 놀이 순서대로 한다면
+	<br>
 
-<form name="frm">
-<select name="play" size="8">
-	<option selected> 숨쉬기 </option>
-	<option> 밥먹기 </option>
-	<option> 그냥있기 </option>
-	<option> 잠자기 </option>
-	<option> 술먹기 </option>
-	<option> 멍때리기 </option>
-</select> <br>
+	<form name="frm">
+		<select name="play" size="6">
+			<!--  size 지정하지 않을 경우 combo box 형태로 나옴 -->
+			<option selected>숨쉬기</option>
+			<!-- 초기 선택 -->
+			<option>밥먹기</option>
+			<option>그냥있기</option>
+			<option>잠자기</option>
+			<option>술먹기</option>
+			<option>멍때리기</option>
+		</select> <br> <input type="button" id='up' value="▲"><br> <br>
+		<input type="button" id='down' value="▼"><br> <br>
+	</form>
 
-<input type="button" id='up'	value="▲"><br><br>
-<input type="button" id='down'	value="▼"><br><br>
-</form>
-
-</body> 
+</body>
 </html>

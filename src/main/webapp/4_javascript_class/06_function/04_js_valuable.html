@@ -1,15 +1,71 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<meta charset="UTF-8">
-	<title>자바스크립트 변수와 범위</title>
-	<script>
+<meta charset="UTF-8">
+<title>자바스크립트 변수와 범위</title>
+<script>
+	
+		/* var 중심으로 확인 => 추가로 let 확인 */
+		// 1. 글로벌 변수와 지역변수
+		/*var scope = '글로벌변수';
+		function getValue() {
+			var scope ='지역변수';
+			return scope;
+		}
+		
+		document.write(getValue()+'<br/>');		// 지역변수	
+		document.write(scope+'<br/>');			// 글로벌변수 */
+		
+		// 2. var 를 사용하지 않고 변수 선언시 모든 변수가 글로벌 변수로 취급됨.
+		//  ******* 변수 선언시 var , let 꼭 사용하기.
+		/*scope = '글로벌변수';
+		function getValue() {
+			scope ='지역변수';
+			test='test';
+			return scope;
+		}
+		
+		document.write(getValue()+'<br/>');		// 지역변수	
+		document.write(scope+'<br/>');			// 지역변수(글로벌변수의 값이 지역변수로 바뀌어 선언됨.)
+		document.write(test+'<br/>');			// 테스트 (글로벌변수로 선언되었으므로)*/
+		
+		// 3. 지역 변수 선언시 함수의 앞단에 위치 시키기
+		var scope = '글로벌변수';
+		function getValue() {
+			document.write('<0>'+scope+'<br/>');		//  함수의 뒤에 지역변수 선언시, 해당 변수가 정의되어 있지 않아 undefined가 나옴
+			var scope ='지역변수';
+			return scope;
+		}
+		
+		document.write(getValue()+'<br/>');		// 지역변수	
+		document.write(scope+'<br/>');			// 글로벌변수
+		
+		// 4. 지역변수 범위
+	    	// -var : 함수의 블록
+	    	// -let : 블록
+	    	
+	    if(true){
+	    	var i = 100;
+	    	let j = 100;		// 해당 블록에서만 값이 지정되어 있어 , 외부로 호출 불가
+	    }
+		
+			document.write('i = '+i+'<br/>');
+			//document.write('j = '+j+'<br/>');			// j 외부에서 호출 안됨
+			
+		for(var a=0; a<4; a++) {}
+		for(var a=0; a<4; a++) {}
+		document.write('a = '+a+'<br/>');				// a = 4	
+		
+		for(let a=0; a<4; a++) {}
+		for(let a=0; a<4; a++) {}
+		document.write('a = '+a+'<br/>');				// a = 4 (var로 선언된 a 가 있어 4 호출)
+			
 
 	</script>
 </head>
 
 <body>
 
-  
- </body>
+
+</body>
 </html>

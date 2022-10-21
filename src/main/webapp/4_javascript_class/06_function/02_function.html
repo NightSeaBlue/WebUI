@@ -6,23 +6,62 @@
 </head>
 <body>
 	<script>
-	/*
-	// @ function 명령은 정적인 구조이고, 
+	
+	// @ function 명령은 정적인 구조이고,  (Static // 즉 상수 개념, 먼저 읽는다.)
 	// @ Function 생성자와 함수리터럴은 실행시 판단한다.
+	// 가급적 함수 생성시 document 나 console 앞에 위치 시킬것 (인터프린터 언어임)
 
-	document.writeln('삼각형의 면적은 2 ' +  triangle(4,3) + '</br>');
+	/*document.writeln('삼각형의 면적은 2 ' +  triangle(4,3) + '</br>');
 	function triangle ( base, height ){
 				return base * height / 2;
-	}
-		document.writeln('삼각형의 면적은 ' +  triangle(4,3) + '</br>');		
-		var triangle = function( base, height ){
-			return base * height / 2;
-		} 	
-	*/
+	}*/
+	/*	document.writeln('삼각형의 면적은 ' +  triangle(4,3) + '</br>');*/ 		
+	/*	var triangle = function( base, height ){
+							return base * height / 2;
+												}	
+		document.writeln('함수 :'+triangle+'<br/>');		//함수 구조 호출
+		document.writeln('함수 :'+triangle()+'<br/>');	//함수 실행 결과 호출
+		
+				
 	
 	
 	// @ 함수는 데이터형의 일종이다.
+	triangle = 10000;	// 함수가 데이터형의 일종이므로 값을 변경할 경우 변경된 값이 출력됨.
+	document.writeln('함수 :'+triangle+'<br/>');*/
 	
+	/*function doA() {
+		document.writeln('함수 A <br/>');
+	}
+	
+	function doB() {
+		document.writeln('함수 B <br/>');
+	}
+	
+	var arr=[doA,doB];			// 배열로도 취급 가능
+	document.writeln(arr+'<br/>');
+	console.log(arr);
+	
+	arr[0]();					// 배열 내 함수 호출 가능함 (반복문 조건걸고 수행 가능)
+	arr[1]();*/
+	
+	// @ 함수는 데이터형의 일종이다.
+			//=> 함수가 함수의 인자로 사용 될 수 있음.
+			
+	/*var f1 = function () {return 2;}
+	var f2 = function () {return 1;}
+	var f3 = function (a) {return a*a;}*/
+	
+	var f4 = function (a1,a2,a3) {
+		return a3(a1()+a2());
+	}
+	
+	/*var result = f4(f1,f2,f3);*/
+	
+	var result = f4(function() {return 2;},
+					function() {return 1;},
+					function(a){return a*a;});				// 2, 1 리턴 받고 3번째 함수 실행 이 때 a 는 f1,f2합
+	
+	document.write('결과 : '+result+'<hr/>');
 	
 	</script>
 </body>

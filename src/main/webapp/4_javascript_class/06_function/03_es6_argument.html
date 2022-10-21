@@ -6,13 +6,17 @@
 <script>
  
 	// @ 1. 인수의 기본값(default) 지정
-   	function multiple( first, second )
+   	function multiple( first, second=1 )
 	{
 		return first * second;
 	}
 	document.writeln('곱은 ' +  multiple( 3, 4 ) + '<br/>'  );
-	document.writeln('곱은 ' +  multiple( 3, 4, 5 ) + '<br/>'  );
-	document.writeln('곱은 ' +  multiple( 3 ) + '<br/>' ); 
+	document.writeln('곱은 ' +  multiple( 3, 4, 5 ) + '<br/>'  );			// 5 안받음
+	document.writeln('곱은 ' +  multiple( 3 ) + '<br/>' ); 				// second 를 default 값을 지정해 둔 경우, default 값을 받아 function 실행
+	
+	document.writeln('곱은 ' +  multiple( 3 , null ) + '<br/>');			// function 에서 null = 0 으로 취급
+	document.writeln('곱은 ' +  multiple( 3 , false ) + '<br/>');			// function 에서 false = 0 으로 취급
+	document.writeln('곱은 ' +  multiple( 3 , undefined ) + '<br/>');		// function 에서 undefined일 경우 default 값 들어가 계산
 	
 
 	

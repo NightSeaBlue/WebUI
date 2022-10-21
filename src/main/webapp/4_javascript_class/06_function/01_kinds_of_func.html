@@ -4,7 +4,50 @@
 	<meta charset="UTF-8">
 	<title>자바스크립트 함수 만들기</title>
 	<script>
-
+			//1) function keyword first 함수 생성
+			function first() {
+				var txt=document.querySelector('#first');
+				txt.style.backgroundColor = '#CCCCCC';
+				txt.style.color = '#AAAAAA';
+			}
+			
+			/*function second() {
+				var txt = document.querySelector('#second');
+				txt.style.backgroudColor ="#BBBBBB";
+				txt.style.color = "#123456";
+			}
+			
+			function third() {
+				var txt = document.querySelector('#third');
+				txt.style.backgroudColor ="#DDDDDD";
+				txt.style.color = "#CCCCCC";
+				
+			}
+			
+			function fourth(){
+				var txt = document.querySelector('#fourth');
+				txt.style.backgroudColor ="#EEFFEE";
+				txt.style.color = "#AABBCC";
+			}*/
+			
+			// 2) 함수 리터럴 second 생성
+			var second = function () {
+				var txt = document.querySelector('#second');
+				txt.style.backgroudColor ='gray';
+				txt.style.color = 'beige';
+			}
+			
+			// 3) 함수 생성자 생성
+			
+			var third = new Function ("var txt = document.querySelector('#third'); txt.style.backgroundColor= 'pink'; txt.style.color='lightblue';");
+			
+			// 4) 애로우 함수
+			
+			let fourth=()=>{var txt = document.querySelector('#fourth');
+			txt.style.backgroudColor ='#ABCDEF';
+			txt.style.color = '#098765';};
+			
+	
 	</script>
 </head>
 
@@ -12,10 +55,10 @@
 	<p> <span id="first"> 1. function 명령 </span>
 		<input type="button" value="확인" onclick="javascript:first()"/>
 	</p>
-	<p> <span id="third"> 2. 함수 리터럴 </span>
+	<p> <span id="second"> 2. 함수 리터럴 </span>
 		<input type="button" value="확인" onclick="javascript:second()"/>
 	</p>
-	<p> <span id="second"> Function 생성자 </span>
+	<p> <span id="third"> Function 생성자 </span>
 		<input type="button" value="확인" onclick="javascript:third()"/>
 	</p>
 

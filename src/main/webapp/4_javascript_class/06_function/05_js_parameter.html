@@ -4,6 +4,27 @@
 	<meta charset="UTF-8">
 	<title> 파라메터 인자</title>
 	<script>
+	
+		// 1. 함수의 인자로 기본형 (call by Value) > string, number,boolean > 원본의 값만 바라보고 있으므로, 원본에 영향을 미치지 않음.
+			var pri =10;
+			function priParam (pri) {
+				pri--;
+				return pri;
+			}
+			
+			document.write('1> 기본형 인자 : '+priParam(pri)+'<br/>');		//9
+			document.write('2> 기본형 인자 : '+pri+'<br/>');				//10
+		
+		// 2. 함수의 인자로 참조형 (call by Reference) > 배열,obj	> 원본에 영향을 미침. (인자의 주소를 참조하기 때문)
+			
+			var ref = [1,2,3,4,5];
+			function refParam(ref) {
+				ref.pop();
+				return ref;
+			}
+			
+			document.write('1> 참조형 인자 : '+refParam(ref)+'<br/>');		// 1,2,3,4		// 배열에서 맨 마지막 값을 뺀 결과를 return
+			document.write('2> 참조형 인자 : '+ref+'<br/>');				// 1,2,3,4		// pop 실행 된 배열이 글로벌변수로 대체됨.
 
 	</script>
 </head>

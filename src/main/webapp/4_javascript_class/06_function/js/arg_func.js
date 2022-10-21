@@ -10,6 +10,7 @@ function arrayProcess( data, f ) {
 var sumResult = 0;
 function sum(  data ){	
 	sumResult += parseInt(data);
+	
 }
 
 // 각각의 데이터의 곱을 구하는 함수
@@ -17,3 +18,4 @@ var squareResult = new Array();
 function square(  data ){			
 	squareResult.push( data * data );
 }
+

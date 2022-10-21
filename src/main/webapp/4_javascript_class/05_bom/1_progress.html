@@ -13,8 +13,15 @@
 <script>
 	var progress = document.getElementById("progress");
 	var current = 0;
-
 	
+	setInterval(function(){
+		progress.value=++current;
+	},100);
+	//setTimeout(updateProgress,20);
+
+	/*function updateProgress () {
+		progress.value = ++current;		
+	}*/
 	
 	
 

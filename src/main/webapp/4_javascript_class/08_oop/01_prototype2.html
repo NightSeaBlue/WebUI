@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Javascript 객체지향</title>
+</head>
+<body>
+	<script type="text/javascript">
+/*
+  이름, 국어점수, 영어점수, 수학점수를 저장
+  해당 클래스 안에는 국,영,수 총점을 구하는 함수를 가진 클래스 Student 선언
+ */
+ 
+ function Student(name,kor,eng,math) {
+	this.name = name;
+	this.kor = kor;
+	this.eng = eng;
+	this.math = math;
+		
+}
+ 
+//*
+// 자바스크립트의 클래스는 동적인 추가도 가능 (함수도 변수로 받을 수 있으므로, 계속 추가 수정이 가능하다.)
+// Prototype : 새로운 변수 추가할 때, 모든 객체에서 선택할 수 있는 권한 부여
+/*Student.prototype.showInfo = function () {
+	return (this.name+" : "+this.total()+"<hr/>");
+}
+
+// 어디에 있는 변수인지를 찾을 수가 없으므로 this 호출 필요
+Student.prototype.total = function () {
+		return this.kor+this.eng+this.math;
+}*/
+
+Student.prototype = {
+		showInfo : function () {
+					return (this.name+" : "+this.total()+"<hr/>");
+					} ,
+		total : function () {
+				return this.kor+this.eng+this.math;
+				}		
+}
+
+var s1 = new Student ('홍길동',80,80,70);
+document.writeln(s1.name+" 님 : "+s1.total()+'<br/>');
+
+var s2 = new Student('홍길자',90,88,30);
+document.writeln(s2.name+" 님 : "+s2.total()+'<br/>');
+
+
+
+
+document.writeln(s1.showInfo());
+
+document.writeln(s2.showInfo());	//홍길자님의 결과는? // 추가하는 변수에 prototype을 지정하면, 모든 객체에서 해당 변수 호출 가능
+</script>
+</body>
+</html>

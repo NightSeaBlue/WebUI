@@ -11,6 +11,25 @@
 //			클로저는 특정 함수가 암묵적으로 다른 함수의 참조를 가지고 있기 때문에
 //			호출되는 함수가 참조하는 함수의 메모리 공간을 참조한다. (?)
 //			아무튼 클로저를 이용하여 전역변수의 사용을 줄일 수 있다
+//------ 함수 선언 (함수의 인자로 다른 함수도 선언 가능)
+	function add(a, b, c) {
+		var result = a + b;				// 지역변수 선언 (var)
+		c(result);
+		return function(){
+					result++;
+					return '공유결과? : '+result;
+				};
+	}
+
+	//------ 함수 호출 
+	var resultVar = add(10, 20,function(res){
+									document.write('결과 : '+res+'<br/>');
+									});
+	document.write('리턴 결과 : '+resultVar()+'<hr/>');
+	document.write('리턴 결과 : '+resultVar()+'<hr/>');
+	document.write('리턴 결과 : '+resultVar()+'<hr/>');
+	result = 1000000;									//if function 내 변수를 var(지역변수로 할당하지 않은 경우) 지역 변수로 선언되어 있지 않으므로, 값의 변화 가능							
+	document.write('리턴 결과 2 : '+resultVar()+'<hr/>');
 
 
 </script>

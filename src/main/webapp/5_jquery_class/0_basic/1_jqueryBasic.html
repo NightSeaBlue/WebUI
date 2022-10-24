@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8"/>
+	<title> 첫 연습 </title>
+	<!--  JQuery Library 연동 -->
+	<!--  절대 경로로 찾기 -->
+	<!--  <script type="text/javascript" src='/WebUI/5_jquery_class/lib/jquery-3.6.1.min.js'></script>-->
+	<!--  상대 경로로 찾기 -->
+	<!--  <script type="text/javascript" src='../lib/jquery-3.6.1.min.js'></script>-->
+	<!--  CDN 방식 (외부경로에서 직접 다운로드 / Content Delivery Network / 네트워크에서 직접 컨텐츠 전달) -->
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+	<script type="text/javascript">
+	
+	$(document).ready(function() {	
+		// Document 가 준비 되었을 때, 다음과 같은 함수 실행
+		/*$('div#here').hide();		//if ('div #here') >> div 내 자손 중 here라는 ID를 찾게 됨, 따라서 띄어쓰기 조심
+		
+		var n = $('#student > div#name');		// Jquery 실행 명령어 변수 정의 가능
+		alert(n.text());				// 홍길동	(text() div 안의 입력한 문자 호출)
+		n.text('홍이');					//setter & getter 형태 동일
+		alert(n.text());				// 홍이 */
+		
+		$('#here').click(function () {
+			$('#here').text('마우스 클릭함');		
+		});
+		
+		$('#here').mouseover(function() {
+			$(this).text('마우스가 올라감')
+			$(this).css({'color':'red'})
+		});
+		
+		$('#here').mouseout(function() {
+			$(this).text('마우스가 내려감')
+			$(this).css({'color':'blue'})
+		});
+		
+		$('#here').hover(function(){
+			$(this).css({'border':'2px solid green'});
+		},function(){
+			$(this).css({'border':'2px dotted yellow'});
+		})
+		// hide() / show()
+		// 효과함수
+		/*$('#here').fadeOut(1000);
+		$('#here').fadeIn(1000);*/
+		
+		// chaining
+		//$('#here').fadeOut(1000).fadeIn(2000);
+		
+		$('#here').slideUp(2000);
+		$('#here').slideDown(2000);
+		
+		// 요소찾기
+		var s = $('#student');
+		var n = s.find('#name');		// 자식을 찾음
+		//n.text('홍가놈');				 // 단순 글씨만
+		//n.html('<span>홍가2<span/>');	// tag를 인식할 때
+		n.text('<span>홍가3<span/>');		// tag 인식 불가	
+	});
+		
+	</script>
+</head>
+<body>
+	
+
+	<div id="here">
+	아자아자 제이쿼리~~!!! 
+	</div>
+	
+	
+	<div id="student">
+		<div id="name">홍길동</div>
+		<div id="age">34</div>
+	</div>
+
+
+	
+</body>
+</html>

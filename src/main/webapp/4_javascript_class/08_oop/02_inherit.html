@@ -18,8 +18,37 @@
 		};
 
 		// 자식클래스
+		var Dog = function () {};
+		Dog.prototype = new Animal () ;	//상속관계
+		
+		var dog = new Dog;
+		dog.sound();
+		dog.move();
+	
+		Dog.prototype.sound = function () {
+			document.writeln('멍멍멍 <br/>');
+		}
 
-
+		dog.sound();		// 메소드 오버라이딩 된 함수가 불려짐
+		
+		/*
+			Human 클래스는 Animal Class 를 상속받음
+			Human 클래스의 객체를 생성하여 변수 ingan에 저장
+			Animal 클래스의 move function 을 overriding
+			move 함수 호출시 : '인간은 두발로 걷는다'라고 출력함.
+			
+		*/
+		
+		var Human = function () {};
+		Human.prototype = new Animal();
+		
+		var ingan = new Human;
+		
+		Human.prototype.move = function () {
+			document.writeln('인간은 두발로 걷는다. <br/>');
+		}
+		
+		ingan.move();
 
 	</script>
 </body>

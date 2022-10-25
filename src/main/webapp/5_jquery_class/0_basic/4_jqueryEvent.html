@@ -8,7 +8,46 @@
 	.bg { background : yellow; }
 	.border { border : 3px dotted red; }
 </style>
+<script type="text/javascript" src='/WebUI/5_jquery_class/lib/jquery-3.6.1.min.js'></script>
+<script type="text/javascript">
+$(function(){
+	
+	$('li').css({'cursor':'pointer'});
+	// 원래 이벤트 연결 함수 : bind() / one()		// bind() 복수 선택 허용, one() 단일 클릭만 허용
+	/*$('li').one('click',function(){
+		//var liTxt = $(this).text();		// jQuery     type
+		var liTxt = this.innerHTML;			// javascript type
+		$('#result').text(liTxt);
+	});*/
+	
+	/*$('li').click(function(){
+		$('#result').text($(this).text());
+	});*/
+	
+	// $('h1').bind('click',function(){});
+	/*$('h1').click(function(){
+		//alert('ok');
+		//---------------------------
+		// $('ul') : 기존 객체 선택
+		// $('<ul/>') : 신규 객체 생성
+		
+		var n = $('<li/>').text(new Date());
+		$('ul').append(n);
+	});*/
+	// ---------------------------------
+	// ************************************
+	// 동적으로 생성된 요소에는 이벤트가 걸리지 않음.
+	
+	$('ul').on('click','li',function(){
+		$('#result').text($(this).text());
+	})
+	
 
+
+
+});
+
+</script>
 </head>
 <body>
 	<h1>제이쿼리 이벤트</h1>

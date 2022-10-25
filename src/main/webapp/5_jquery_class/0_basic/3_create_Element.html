@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+ <head>
+<meta charset="UTF-8">
+<title> DOM에서 노트 추가  </title>
+<script type="text/javascript" src='/WebUI/5_jquery_class/lib/jquery-3.6.1.min.js'></script>
+<script type="text/javascript">
+ $(function(){
+	 //1. 입력버튼이 눌렸을 때
+ $('#bInsert').click (function(){
+	 //alert('OK');		// 이벤트 발생 확인
+	 
+	 //2. 사용자가 입력한 값을 가져오기
+	 var table = $('#listTable');
+	 var name = $('#name').val();
+	 var age = $('#age').val();
+	 var tel = $('#tel').val();
+	 var addr = $('#addr').val();
+	 
+	//3. 동적으로 tr/td 요소 만들어서
+	 var tr = $('<tr/>');				// 동적 테이블 로우 생성
+	 /*var td1 = $('<td/>').text(name);
+	 var td2 = $('<td/>').text(age);
+	 var td3 = $('<td/>').text(tel);
+	 var td4 = $('<td/>').text(addr);*/
+	 var td5 = $('<td><button class="btn">삭제</button></td>');	
+	 
+	 tr.append([$('<td/>').text(name),$('<td/>').text(age),
+		 $('<td/>').text(tel),$('<td/>').text(addr)
+		 ,td5]);
+	 
+	//4. table 붙이기
+	 table.append(tr);
+	
+	//5. 삭제버튼을 눌렀을 때 해당 행만 지우기
+	td5.click(function(){
+		$(this).parent().remove();
+	});
+	 
+	 
+  });
+
+ });
+  
+</script>
+<!-- [오늘의 숙제] 삭제 버튼을 클릭하면 해당 행을 지우기 -->
+
+ </head>
+<body>
+
+<h2> 고객정보 입력 </h2>
+<form name="inForm" method="post">
+<table border = 1>
+	<tr>
+		<td width="80" align="center">Name</td>
+		<td width="50" align="center">Age</td>
+		<td width="100" align="center">Tel</td>	
+		<td width="250" align="center">Addr</td>
+		
+	</tr>
+	<tr>
+		<td align="center"><input type="text" size="8" name="name" id="name"></td>
+		<td align="center"><input type="text" size="4" name="age" id="age"></td>
+		<td align="center"><input type="text" size="12" name="tel" id="tel"></td>
+		<td align="center"><input type="text" size="30" name="addr" id="addr"></td>
+	</tr>
+	<tr>
+		<td colspan="4" align="center"> 
+			<input type="button" value="입력" id='bInsert' >
+		</td>
+	</tr>
+</table>
+<hr>
+<h2> 고객정보 목록보기  </h2>
+<table border = 1 id="listTable">
+	<tr>
+		<td width="80" align="center">Name</td>
+		<td width="50" align="center">Age</td>
+		<td width="100" align="center">Tel</td>	
+		<td width="250" align="center">Addr</td>
+		<td width="250" align="center">삭제</td>
+	</tr>
+</table>
+
+</form>
+</body>
+</html>

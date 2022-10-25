@@ -40,7 +40,7 @@
 //nth-child() :부모요소중에서 n번째 자식요소 선택
 $( "body" ).find( "div" ).eq( 0 ).addClass( "blue" );//1번째 사각형이 파란색으로 변경
 $( "body" ).find( "div" ).eq( 4 ).addClass( "red" );//5번째 사각형이 빨간색으로 변경
-$( "div:nth-child(2n+1)").addClass("yellow" );//사람의 눈으로 봤을 때 짝수번째 사각형이 노란색으로 변경 (기계어 기준 Index : 0 부터 시작)
+$( "div:nth-child(even)").addClass("yellow" );//사람의 눈으로 봤을 때 짝수번째 사각형이 노란색으로 변경 (기계어 기준 Index : 0 부터 시작)
 
 </script>
  

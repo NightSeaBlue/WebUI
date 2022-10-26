@@ -1,0 +1,337 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>6조 맥도날드</title>
+
+<link rel="stylesheet" href="./css/bootstrap.min.css">
+<link rel="stylesheet" href="./css/kiosk.css">
+<script type="text/javascript" src="./js/jquery-3.6.1.min.js"></script>
+<script type="text/javascript" src="./js/kiosk.js"></script>
+</head>
+<body>
+<img src="./images/보노보노.png" id="main">
+	<div class="container">
+		<img src="./images/banner.png">
+		<div class="row">
+			<div class="col-md-1">
+				<ul class="tabs">
+					<li class="on"><img src="./images/빅맥_탭.png" class="on"><a href="#tab-1" class="on tabname"></a></li>
+					<li><img src="./images/세트.png"><a href="#tab-2" class="tabname"></a></li>
+					<li><img src="./images/후라이.png"><a href="#tab-3" class="tabname"></a></li>
+					<li><img src="./images/콜라.png"><a href="#tab-4" class="tabname"></a></li>
+				</ul>
+			</div>
+
+			<div class="col-md-6">
+				<div id="tab-1" class="tables">
+					<table class="table  table-bordered">
+						<tr id="menutitle">
+							<th colspan=3 id="titleText">메뉴</th>
+						</tr>
+						<tr class="menus">
+							<td id='menu1'><img src="./images/1955버거.jpg" class="center" />
+								<br />
+								<p align="center">
+									<span class="menu" data-name='1955버거' data-price="5000">1955버거
+										<br> 5000원
+									</span>
+								</p> <br /></td>
+							<td id='menu2'><img src="./images/더블불고기버거.jpg"
+								class="center" /> <br />
+								<p align="center">
+									<span class="menu" data-name='더블불고기버거' data-price="4000">더블불고기버거
+										<br> 4000원
+									</span><br />
+								</p></td>
+							<td id='menu3' class='menu'><img
+								src="./images/더블쿼터파운더치즈버거.jpg" class="center" /> <br />
+								<p align="center">
+									<span class="menu" data-name='더블쿼터파운더치즈버거' data-price="6000">더블쿼터파운더치즈버거
+										<br> 6000원
+									</span>
+								</p></td>
+						</tr>
+						<tr class="menus">
+							<td id='menu4' class='menu'><img
+								src="./images/더블필레오피쉬버거.jpg" class="center" /> <br />
+								<p align="center">
+									<span class="menu" data-name='더블필레오피쉬버거' data-price="5000">더블필레오피쉬버거
+										<br> 5000원
+									</span>
+								</p> <br /></td>
+							<td id='menu5' class='menu'><img
+								src="./images/맥스파이시상하이버거.jpg" class="center" /> <br />
+								<p align="center">
+									<span class="menu" data-name='맥스파이시상하이버거' data-price="4500">맥스파이시상하이버거
+										<br> 4500원
+									</span>
+								</p></td>
+							<td id='menu6' class='menu'><img src="./images/맥크리스피디럭스.jpg"
+								class="center" /> <br />
+								<p align="center">
+									<span class="menu" data-name='맥크리스피디럭스버거' data-price="5500">맥크리스피디럭스버거
+										<br> 5500원
+									</span>
+								</p></td>
+						</tr>
+						<tr class="menus">
+							<td id='menu7' class='menu'><img src="./images/맥크리스피클래식.jpg"
+								class="center" /> <br />
+								<p align="center">
+									<span class="menu" data-name='맥크리스피클래식버거' data-price="4500">맥크리스피클래식버거
+										<br> 4500원
+									</span>
+								</p></td>
+							<td id='menu8' class='menu'><img
+								src="./images/베이컨토마토디럭스버거.jpg" class="center" /> <br />
+								<p align="center">
+									<span class="menu" data-name='베이컨토마토디럭스버거' data-price="5500">베이컨토마토디럭스버거
+										<br> 5500원
+									</span>
+								</p></td>
+							<td id='menu9' class='menu'><img src="./images/슈슈버거.jpg"
+								class="center" /> <br />
+								<p align="center">
+									<span class="menu" data-name='슈슈버거' data-price="3500">슈슈버거
+										<br> 3500원
+									</span>
+								</p></td>
+						</tr>
+					</table>
+				</div>
+
+				<div id="tab-2" class="tables">
+					<table class="table  table-bordered">
+						<tr>
+							<th colspan=3>메뉴</th>
+						</tr>
+						<tr>
+							<td><img src="./images/1955버거세트.jpg" class="center" /><br />
+								<p align="center">
+									<span class="menu" data-name='1955버거세트' data-price="8500">1955버거세트<br>8500원
+									</span>
+								</p> <br /></td>
+							<td><img src="./images/더블불고기버거세트.jpg" class="center" /> <br />
+								<p align="center">
+									<span class="menu" data-name='더블불고기버거세트' data-price="7000">더블불고기버거세트<br>7000원
+									</span>
+								</p></td>
+							<td id='menu3' class='menu'><img
+								src="./images/더블쿼터파운더치즈세트.jpg" class="center" /> <br />
+								<p align="center">
+									<span class="menu" data-name='더블쿼터파운더치즈세트' data-price="9000">더블쿼터파운더치즈세트<br>9000원
+									</span>
+								</p></td>
+						</tr>
+						<tr>
+							<td id='menu4' class='menu'><img
+								src="./images/더블필레오피쉬세트.jpg" class="center" /> <br />
+								<p align="center">
+									<span class="menu" data-name='더블필레오피쉬세트' data-price="8000">더블필레오피쉬세트<br>8000원
+									</span>
+								</p> <br /></td>
+							<td id='menu5' class='menu'><img
+								src="./images/맥스파이시상하이버거세트.jpg" class="center" /> <br />
+								<p align="center">
+									<span class="menu" data-name='맥스파이시상하이버거세트' data-price="9000">맥스파이시상하이버거세트<br>9000원
+									</span>
+								</p></td>
+							<td id='menu6' class='menu'><img
+								src="./images/맥크리스피디럭스버거세트.jpg" class="center" /> <br />
+								<p align="center">
+									<span class="menu" data-name='맥크리스피디럭스버거세트' data-price="8000">맥크리스피디럭스버거세트<br>8000원
+									</span>
+								</p></td>
+						</tr>
+						<tr>
+							<td id='menu7' class='menu'><img
+								src="./images/맥크리스피클래식버거세트.jpg" class="center" /> <br />
+								<p align="center">
+									<span class="menu" data-name='맥크리스피클래식버거세트' data-price="8500">맥크리스피클래식버거세트<br>8500원
+									</span>
+								</p></td>
+							<td id='menu8' class='menu'><img
+								src="./images/베이컨토마토디럭스세트.jpg" class="center" /> <br />
+								<p align="center">
+									<span class="menu" data-name='베이컨토마토디럭스세트' data-price="8000">베이컨토마토디럭스세트<br>8000원
+									</span>
+								</p></td>
+							<td id='menu9' class='menu'><img src="./images/슈슈버거세트.jpg"
+								class="center" /> <br />
+								<p align="center">
+									<span class="menu" data-name='슈슈버거세트' data-price="5000">불고기버거세트<br>5000원
+									</span>
+								</p></td>
+						</tr>
+					</table>
+				</div>
+
+				<div id="tab-3" class="tables">
+					<table class="table  table-bordered">
+						<tr>
+							<th colspan=3>메뉴</th>
+						</tr>
+						<tr>
+							<td><img src="./images/후렌치후라이.jpg" class="center" /><br />
+								<p align="center">
+									<span class="menu" data-name='후렌치후라이' data-price="2500">후렌치후라이<br>2500원
+									</span>
+								</p> <br /></td>
+							<td><img src="./images/골든모짜렐라치즈스틱.jpg" class="center" /> <br />
+								<p align="center">
+									<span class="menu" data-name='골든모짜렐라치즈스틱' data-price="1500">골든모짜렐라치즈스틱<br>1500원
+									</span>
+								</p></td>
+							<td id='menu3' class='menu'><img src="./images/맥너겟.jpg"
+								class="center" /> <br />
+								<p align="center">
+									<span class="menu" data-name='맥너겟' data-price="2200">맥너겟<br>2200원
+									</span>
+								</p></td>
+						</tr>
+						<tr>
+							<td id='menu4' class='menu'><img
+								src="./images/맥스파이시치킨텐더.jpg" class="center" /> <br />
+								<p align="center">
+									<span class="menu" data-name='맥스파이시치킨텐더' data-price="4000">맥스파이시치킨텐더<br>4000원
+									</span>
+								</p> <br /></td>
+							<td id='menu5' class='menu'><img src="./images/상하이치킨스낵랩.jpg"
+								class="center" /> <br />
+								<p align="center">
+									<span class="menu" data-name='상하이치킨스낵랩' data-price="3000">상하이치킨스낵랩<br>3000원
+									</span>
+								</p></td>
+							<td id='menu6' class='menu'><img src="./images/스트링치즈.jpg"
+								class="center" /> <br />
+								<p align="center">
+									<span class="menu" data-name='스트링치즈' data-price="2000">스트링치즈<br>2000원
+									</span>
+								</p></td>
+						</tr>
+						<tr>
+							<td id='menu7' class='menu'><img src="./images/치킨토마토스낵랩.jpg"
+								class="center" /> <br />
+								<p align="center">
+									<span class="menu" data-name='치킨토마토스낵랩' data-price="3000">치킨토마토스낵랩<br>3000원
+									</span>
+								</p></td>
+							<td id='menu8' class='menu'><img src="./images/코울슬로.jpg"
+								class="center" /> <br />
+								<p align="center">
+									<span class="menu" data-name='코울슬로' data-price="2000">코울슬로<br>2000원
+									</span>
+								</p></td>
+							<td id='menu9' class='menu'><img src="./images/해쉬브라운.jpg"
+								class="center" /> <br />
+								<p align="center">
+									<span class="menu" data-name='해쉬브라운' data-price="2000">해쉬브라운<br>2000원
+									</span>
+								</p></td>
+						</tr>
+					</table>
+				</div>
+
+				<div id="tab-4" class="tables">
+					<table class="table  table-bordered">
+						<tr>
+							<th colspan=3>메뉴</th>
+						</tr>
+						<tr>
+							<td><img src="./images/드립커피.jpg" class="center" /><br />
+								<p align="center">
+									<span class="menu" data-name='드립커피' data-price="2500">드립커피
+										<br> 2500원
+									</span>
+								</p> <br /></td>
+							<td><img src="./images/딸기쉐이크.jpg" class="center" /> <br />
+								<p align="center">
+									<span class="menu" data-name='딸기쉐이크' data-price="3000">딸기쉐이크
+										<br> 3000원
+									</span>
+								</p></td>
+							<td id='menu3' class='menu'><img src="./images/바닐라라떼.jpg"
+								class="center" /> <br />
+								<p align="center">
+									<span class="menu" data-name='바닐라라떼' data-price="3000">바닐라라떼
+										<br> 3000원
+									</span>
+								</p></td>
+						</tr>
+						<tr>
+							<td id='menu4' class='menu'><img src="./images/스프라이트.jpg"
+								class="center" /> <br />
+								<p align="center">
+									<span class="menu" data-name='스프라이트' data-price="1000">스프라이트
+										<br> 1000원
+									</span>
+								</p> <br /></td>
+							<td id='menu5' class='menu'><img src="./images/아메리카노.jpg"
+								class="center" /> <br />
+								<p align="center">
+									<span class="menu" data-name='아메리카노' data-price="1500">아메리카노
+										<br> 1500원
+									</span>
+								</p></td>
+							<td id='menu6' class='menu'><img src="./images/아이스바닐라라떼.jpg"
+								class="center" /> <br />
+								<p align="center">
+									<span class="menu" data-name='아이스바닐라라떼' data-price="4000">아이스바닐라라떼
+										<br> 4000원
+									</span>
+								</p></td>
+						</tr>
+						<tr>
+							<td id='menu7' class='menu'><img src="./images/제주한라봉칠러.jpg"
+								class="center" /> <br />
+								<p align="center">
+									<span class="menu" data-name='제주한라봉칠러' data-price="4500">제주한라봉칠러
+										<br> 4500원
+									</span>
+								</p></td>
+							<td id='menu8' class='menu'><img src="./images/콜라.jpg"
+								class="center" /> <br />
+								<p align="center">
+									<span class="menu" data-name='콜라' data-price="1000">콜라 <br>
+										1000원
+									</span>
+								</p></td>
+							<td id='menu9' class='menu'><img src="./images/환타.jpg"
+								class="center" /> <br />
+								<p align="center">
+									<span class="menu" data-name='환타' data-price="1000">환타 <br>
+										1000원
+									</span>
+								</p></td>
+						</tr>
+					</table>
+				</div>
+			</div>
+				<div class="col-md-3">
+					<table id="list" class="table table-borderless">
+						<tr id="listtitle">
+							<th colspan=4 id="titleText">주문내역</th>
+						</tr>
+						<tr id="totallist">
+							<td colspan='3' id='jumun'>
+								총합 : <input type='text' id='total' value="0">원
+							</td>
+							<td>
+								<input type='button' value='주문하기' id="btn" class="btn btn-success">
+							</td>
+						</tr>
+						<tr>
+							<td width="200" class="report">목록</td>
+							<td width="100" class="report">가격</td>
+							<td width="100" class="report">갯수</td>
+							<td width="100" class="report">취소</td>
+						</tr>
+					</table>
+				</div>
+		</div>
+
+	</div>
+
+</body>
+</html>

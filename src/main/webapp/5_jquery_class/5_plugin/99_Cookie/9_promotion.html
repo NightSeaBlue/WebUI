@@ -3,11 +3,31 @@
 <head>
 <meta charset="UTF-8">
 <title>광고페이지</title>
+<script type="text/javascript"   src="http://code.jquery.com/jquery-1.9.0.js"></script>
+<script type="text/javascript"   src="js/jquery.cookie.js"></script>
+<script type="text/javascript">
+	// 쿠키(Cookie) : 웹클라이언트(웹브라우저)에 사용자 정보를 저장
+$(function(){
+		$('#closeWin').click(function(){
+			//alert('OK');
+			var chk = $('input[type="checkbox"]').is(':checked');		//$('찾고자하는모델[타입]')
+			//alert(chk);												// check : true / uncheck : false
+			if(chk) {
+				$.cookie('close','no',{expires:1});
+				
+			}
+		});
+		
+			
+})
+		
+
+</script>
 </head>
 <body>
 <img alt="" src="./images/image.jpg"><br/>
 이 페이지를 오늘 하루 열지 않겠습니다.
-<input type="checkbox">
+<input type="checkbox" id='check'>
 <input type='button' id='closeWin' name='closeWin' value='닫기'/>
 </body>
 </html>

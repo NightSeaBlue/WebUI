@@ -3,8 +3,19 @@
 <head>
 <meta charset="UTF-8">
 <title>메인페이지</title>
+<script type="text/javascript"   src="http://code.jquery.com/jquery-1.9.0.js"></script>
+<script type="text/javascript"   src="js/jquery.cookie.js"></script>
 <script type="text/javascript">
-window.open("9_promotion.html","","width=400, height=360");
+$(document).ready(function(){
+	//alert('OK');
+if($.cookie('close')!=('no')){				// 쿠키의 값이 no 가 아닐경우 광고 창을 띄움
+	 window.open("9_promotion.html","","width=400, height=360");
+}
+
+
+});
+
+
 </script>
 </head>
 <body>

@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>dateRange.html</title>
+<!--  1.CSS 연결 -->
+<link rel="stylesheet" type="text/css"
+  href="http://code.jquery.com/ui/1.13.2/themes/ui-lightness/jquery-ui.css" />
+<!--  2. Jquery Library 연결 -->
+<script type="text/javascript"  src="http://code.jquery.com/jquery-3.6.1.js"></script>			<!-- 최신 버전 -->
+<script type="text/javascript"   src="http://code.jquery.com/ui/1.13.2/jquery-ui.js"></script>  <!-- 최신 버전 -->
+<!-- 3. Jquery Plugin 연결 -->
+<script type="text/javascript"  src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.10.0/i18n/jquery-ui-i18n.min.js"></script>
+<!-- 4. 기능부 코딩 -->
+<script type="text/javascript">
+ $(function(){
+	 var now = new Date();
+	 $('#today').text(now.toLocaleDateString());							//text(),html(),val() 개념 잡기
+	 $.datepicker.setDefaults($.datepicker.regional['ko']);					//지역 한국으로 설정
+	 $('#fromDate').datepicker({
+		 	minDate				: 0,										// 시작일 오늘 날짜로 설정 (오늘 날짜 이전 일 선택 불가능)
+	 		onClose				: function(selectedDate){				
+	 			$('#toDate').datepicker("option","minDate",selectedDate);	// 종료일을 시작일 이후부터 지정가능하게끔 설정
+	 										},
+		 	showOn 				: 'button',									// 버튼 형태로 요일 선택 가능
+			buttonImage 		: 'images/calendar.gif',					// 버튼의 이미지 추가
+			showButtonPanel 	: true,										// 달력 밑 패널 보이기
+			showAnim 			: 'slideDown'								// 달력 내려오는 효과 부여
+	 });
+	 
+	 $('#toDate').datepicker({
+		 	onClose				: function(selDate){
+		 			$('#fromDate').datepicker("option","maxDate",selDate);	// 종료일 이후 일정으로 시작일 설정 불가능하게 고정시킴			
+		 											},
+		 	showOn 				: 'button',									//버튼 형태로 요일 선택 가능
+			buttonImage 		: 'images/calendar.gif',					// 버튼의 이미지 추가
+			showButtonPanel 	: true,										// 달력 밑 패널 보이기
+			showAnim 			: 'slideDown'								// 달력 내려오는 효과 부여
+	 });
+	 
+	 
+ }) 
+</script>
+</head>
+<body>
+
+오늘날짜 : <span id='today'></span>
+<hr>
+<hr>
+
+<form>
+	<label for='fromDate'>시작일자</label>
+	<input id='fromDate' name='fromDate' type='text'>
+	~
+	<label for='toDate'></label>
+	<input id='toDate' name='toDate' type='text'>
+
+</form>
+
+</body>
+</html>

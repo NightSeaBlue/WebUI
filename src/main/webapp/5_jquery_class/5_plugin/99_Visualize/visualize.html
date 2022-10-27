@@ -3,7 +3,24 @@
 <head>
 <meta charset="UTF-8" />
 <title>Visualize</title>
-<script type="text/javascript"  src=""></script>
+<link rel="stylesheet" type="text/css" href="./css/visualize.css">
+<link rel="stylesheet" type="text/css" href="./css/visualize-light.css">
+<script src="/WebUI/5_jquery_class/lib/jquery-3.6.1.js"></script>
+<script src="./js/visualize.jQuery.js"></script>
+
+<script type="text/javascript">
+$(function(){
+	
+	$('#data').visualize({type:'bar'});				// 막대그래프
+	$('#data').visualize({type:'pie'});				// 원형
+ 	$('#data').visualize({type:'area'});			// 면적형
+ 	$('#data').visualize({type:'line'});			// 선형
+
+
+
+
+})
+</script>
 
 </head>
 <body>

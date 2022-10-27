@@ -3,7 +3,7 @@
 
 body > img#main {
 	position: absolute;
-	z-index: 1000;
+	z-index: 1000;				
 	left: 0px;
 	top: 0px;
 	width: 100%;
@@ -13,14 +13,14 @@ body > img#main {
 ul.tabs {
 	margin: 0px;
 	padding: 0px;
-	list-style: none;
+	list-style: none;					/* 리스트의 글씨 없앰 (이때 즉 탭의 글씨 없앰) */ 
 	height: 50px;
 }
 
 ul.tabs img {
 	width: 70px;
 	height: 70px;
-	object-fit: cover;
+	object-fit: cover;					/* 탭 이미지 고정 */ 
 }
 
 ul.tabs li {
@@ -28,7 +28,7 @@ ul.tabs li {
 	height: 95px;
 	background: white;
 	color: #222;
-	display: inline-block;
+	display: inline-block;				/* 선택한 탭에 block을 줘서 눌려진 것을 표기함 */
 	padding: 10px;
 	cursor: pointer;
 	border: 1px solid grey;
@@ -37,7 +37,7 @@ ul.tabs li {
 }
 ul.tabs li.on {
 	
-	border: 3px solid #FFC300;
+	border: 3px solid #FFC300;	/* 눌러진 경우 색의 변화를 줘서 눌려진 것이 티가 나게 함 */
 }
 
 

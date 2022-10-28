@@ -16,6 +16,13 @@
 	var today = new Date();
 	document.writeln( today  + '<br/>');								//시 분 초 / 시각 (한국표준시)
 	document.writeln( today.toLocaleString()  + '<br/>');				// 연 월 일 시 분 초 / 현지 시각
+	document.writeln(today.toLocaleString('ko-KR',{						// 한글식 표기 / 현지 시각
+				year : 'numeric',
+				month : 'long',
+				day : 'numeric',
+				weekday : 'long'
+				
+	}));
 	document.writeln( today.toGMTString()  + '<br/>');					// 요일명, 일 월 연 그라니치표준(런던)
 	document.writeln( today.toDateString()  + '<br/>');					// 요일 월 일 연
 	document.writeln('<hr/>');

@@ -60,26 +60,32 @@ $(document).ready(function() {
          $('.tab_btn2 img').attr('src','images/tab_btn_2_out.gif');
    })*/
 	
-	// 4. 이미지 슬라이드 구현
-	var slider = $('#best_bg>ul').bxSlider({	
-	auto:true,
-   	pager: true,
-   	controls: false,
-   	autoControls: false,
-    minSlides : 5,
-    maxSlides : 5,
-    moveSlides : 1,
-    slideWidth : 150,
-    slideMargin : 10
-    
-    });
-    
-    $('.prev_btn img').on('click', function() {
-      slider.goToPrevSlide();      
+	// (4)이미지슬라이드 구현 (10점)
+   var mySlider = $('#best_bg>ul').bxSlider({
+      auto:true,
+      minSlides: 5,
+      maxSlides: 5,
+      moveSlides: 1,
+      slideWidth: 150,
+      autoHover: true,
+      controls: false,
+      pager:false
    });
-
-   $('.next_btn img').click(function() {
-      slider.goToNextSlide();   
+   
+   $(".bx-wrapper").css("margin-left","120px");
+   $(".bx-wrapper img").css("vertical-align","middle");
+   
+   $(".prev_btn").click(function(){
+            // 이전 슬라이드 배너로 이동된다.
+            mySlider.goToPrevSlide();
+            // <a>의 링크를 차단한다.
+            return false;
+   });
+   $(".next_btn").click(function(){
+            // 이전 슬라이드 배너로 이동된다.
+            mySlider.goToNextSlide();
+            // <a>의 링크를 차단한다.
+            return false;
    });
    
 	// 5. [로그인]을 누르면 로그인 창이 보이고 [Close]를 누르면 다시 안 보임
